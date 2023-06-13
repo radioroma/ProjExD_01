@@ -23,7 +23,6 @@ def main():
             if 0-bg_x ==1400:
                 bg_x = 0
         bg_x = (bg_x+4)%1600
-
         screen.blit(bg_img, [0-bg_x, 0])
         screen.blit(kk_imgs[tmr%2],[300,+200])
         # bg_x = (bg_x+4)%1600
