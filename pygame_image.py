@@ -8,6 +8,9 @@ def main():
     clock  = pg.time.Clock()
     bg_img = pg.image.load("ex01/fig/pg_bg.jpg")
     kk_img =pg.image.load("ex01/fig/pg_bg.jpg")
+    kk_imgs=[kk_img,
+             pg.transform(kk_img,10,1.0)
+             ]
     dmr = 0
     while True:
         for event in pg.event.get():
