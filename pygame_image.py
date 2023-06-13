@@ -1,8 +1,9 @@
 import sys
 import pygame as pg
-
+bg_x =0
 
 def main():
+    global bg_x
     pg.display.set_caption("はばたけ！こうかとん")
     screen = pg.display.set_mode((800, 600))
     clock  = pg.time.Clock()
@@ -18,9 +19,11 @@ def main():
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT: return
-
-        screen.blit(bg_img, [0, 0])
+        bg_x = (bg_x+4)%1600
+        screen.blit(bg_img, [bg_x+0, 0])
         screen.blit(kk_imgs[tmr%2],[300,200])
+        # bg_x = (bg_x+4)%1600
+        #screen.blit(bg_img, [bg_x-1600, 0])
         pg.display.update()
         tmr += 1        
         clock.tick(10)
